@@ -1,10 +1,10 @@
 # demos
 
-Repository containing in-class demonstrations and exercises. 
+Jupyter notebooks and materials for in-class demonstrations and exercises.
 
-## Copying the repository
+## Cloning the repository
 
-To copy the repository, open a new terminal window:
+To copy the repository, open a new terminal and run:
 
 ```
 git clone https://github.com/2019-NEU502b/demos.git
