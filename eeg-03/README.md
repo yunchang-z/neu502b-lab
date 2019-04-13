@@ -1,4 +1,4 @@
-# eeg-02
+# eeg-03
 
 In this demonstration, we will cover time-frequency analysis of EEG data using mne-python.
 
