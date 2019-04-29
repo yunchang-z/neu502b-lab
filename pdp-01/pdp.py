@@ -2,11 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
-def sigmoid(x):
+def inv_logit(x):
     return 1 / (1 + np.exp(-x))
 
-def sigmoid_derivative(x):
-    return x * (1 - x)
+def inv_logit_derivative(x):
+    fx = inv_logit(x)
+    return fx * (1-fx)
 
 def tanh(x):
     return (1.0 - np.exp(-2*x))/(1.0 + np.exp(-2*x))
@@ -21,6 +22,10 @@ class NeuralNetwork:
     ----------
     net_arch: list
         List specifying the network architecture. See notes for details.
+    activation: tanh | logistic
+        Activation function for the hidden layer.
+    seed : int
+        Seed used by the random number generator.
     
     Attributes
     ----------
@@ -48,11 +53,21 @@ class NeuralNetwork:
     [1] https://chih-ling-hsu.github.io/2017/08/30/NN-XOR
     [2] https://chih-ling-hsu.github.io/2018/08/19/NN-XOR
     """
-    def __init__(self, net_arch):
+    def __init__(self, net_arch, activation='tanh', seed=47404):
         
+        if seed is not None: np.random.seed(seed)
+        
+        ## Define activation functions.
+        if activation == 'tanh':
+            self.activity = tanh
+            self.activity_derivative = tanh_derivative
+        elif activation == 'logistic':
+            self.activity = inv_logit
+            self.activity_derivative = inv_logit_derivative
+        else:
+            raise ValueError('activation must be "tanh" or "logistic".')
+            
         ## Initialize network.
-        self.activity = sigmoid
-        self.activity_derivative = sigmoid_derivative
         self.layers = len(net_arch)
         self.steps_per_epoch = 1
         self.arch = net_arch
