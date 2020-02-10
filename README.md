@@ -18,7 +18,7 @@ To run the code in these demos, you'll have to install our fMRI package.
 pip install git+https://github.com/2020-NEU502b/fmritools.git
 ```
 
-You'll also need to install `seaborn` and `matplotlib`:
+You'll also need to install `seaborn`, `matplotlib`, `jupyter`, and other packages:
 ```
-pip install matplotlib seaborn
+pip install matplotlib seaborn jupyter notebook jupyterlab
 ```
