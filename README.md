@@ -10,10 +10,15 @@ To copy the repository, open a new terminal and run:
 git clone https://github.com/2020-NEU502b/demos.git
 ```
 
-## Requirements
+## Set
 
 To run the code in these demos, you'll have to install our fMRI package.
 
 ```
 pip install git+https://github.com/2020-NEU502b/fmritools.git
+```
+
+You'll also need to install `seaborn` and `matplotlib`:
+```
+pip install matplotlib seaborn
 ```
