@@ -10,7 +10,7 @@ To copy the repository, open a new terminal and run:
 git clone https://github.com/2020-NEU502b/demos.git
 ```
 
-## Set
+## Setup
 
 To run the code in these demos, you'll have to install our fMRI package.
 
