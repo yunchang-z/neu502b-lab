@@ -2,6 +2,11 @@
 
 Folder containing *psychopy* scripts and materials.
 
+To start, install *psychopy*!
+```
+pip install psychopy
+```
+
 For class:
 - Walk through https://www.psychopy.org/coder/tutorial1.html
 - Walk through example, MSIT in particular.
