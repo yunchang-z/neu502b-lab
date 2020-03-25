@@ -8,7 +8,7 @@ Here are some ways to run/look at this notebook:
 - To set up locally, see [Installation Instructions](https://brainiak.org/tutorials/#detailed-installation-instructions). Basically, check out the [tutorials repo](https://github.com/brainiak/brainiak-tutorials), start Jupyter, then run the below setup blocks in `tutorials/08-connectivity.ipynb`.
 
 If you're using **Google Colab**, run this as a new code cell:
-```
+```bash
 %%bash
 git clone https://github.com/brainiak/brainiak-tutorials.git
 cd brainiak-tutorials/tutorials/
@@ -16,7 +16,7 @@ cp -r 07-searchlight 09-fcma 13-real-time utils.py setup_environment.sh /content
 ```
 
 If you're using **Google Colab** or are running this **locally**, run this as a new code cell:
-```
+```bash
 %%bash
 pip install deepdish ipython matplotlib nilearn notebook pandas seaborn watchdog
 pip install --no-use-pep517 brainiak
