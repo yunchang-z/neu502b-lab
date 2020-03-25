@@ -22,7 +22,7 @@ pip install deepdish ipython matplotlib nilearn notebook pandas seaborn watchdog
 pip install --no-use-pep517 brainiak
 mkdir ~/brainiak_datasets
 cd ~/brainiak_datasets
-wget -q --show-progress --no-check-certificate -r 'https://drive.google.com/uc?export=download&confirm=jj9P&id=1iX5nLZvQsWuM5AmKeiBNoP8QkZjlOY7T' -O 'latatt.zip'
+wget -q -r 'https://drive.google.com/uc?export=download&confirm=jj9P&id=1iX5nLZvQsWuM5AmKeiBNoP8QkZjlOY7T' -O 'latatt.zip'
 unzip latatt.zip
 ```
 
