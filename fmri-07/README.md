@@ -14,7 +14,7 @@ cd brainiak-tutorials/tutorials/
 cp -r 07-searchlight 09-fcma 13-real-time utils.py setup_environment.sh /content/
 ```
 
-If you're using Google Colab or are set up locally, run this as a code cell:
+If you're using Google Colab or are set up locally, run this as a new code cell:
 ```
 %%bash
 pip install deepdish ipython matplotlib nilearn notebook pandas seaborn watchdog
