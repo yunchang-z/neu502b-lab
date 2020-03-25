@@ -19,7 +19,7 @@ If you're using Google Colab or are set up locally, run this as a new code cell:
 %%bash
 pip install deepdish ipython matplotlib nilearn notebook pandas seaborn watchdog
 pip install pip\<10
-pip install -U git+https://github.com/brainiak/brainiak
+pip install brainiak
 mkdir ~/brainiak_datasets
 cd ~/brainiak_datasets
 wget -q --show-progress --no-check-certificate -r 'https://drive.google.com/uc?export=download&confirm=jj9P&id=1iX5nLZvQsWuM5AmKeiBNoP8QkZjlOY7T' -O 'latatt.zip'
