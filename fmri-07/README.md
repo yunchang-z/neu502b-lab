@@ -5,7 +5,7 @@
 Here are some ways to run/look at this notebook:
 - [See an already-run version](https://brainiak.org/tutorials/08-connectivity/).
 - [Run on Google Colab (online)](https://colab.research.google.com/github/brainiak/brainiak-tutorials/blob/master/tutorials/08-connectivity.ipynb).
-- To set up locally, see [Installation Instructions](https://brainiak.org/tutorials/#detailed-installation-instructions). Basically, check out the [tutorials repo](https://github.com/brainiak/brainiak-tutorials), then run the below setup block.
+- To set up locally, see [Installation Instructions](https://brainiak.org/tutorials/#detailed-installation-instructions). Basically, check out the [tutorials repo](https://github.com/brainiak/brainiak-tutorials), start Jupyter, then run the below setup blocks in `tutorials/08-connectivity.ipynb`.
 
 If you're using **Google Colab**, run this as a new code cell:
 ```
