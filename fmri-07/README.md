@@ -61,3 +61,9 @@ rm cookies.txt
 unzip vdc.zip
 mv vdc-small vdc
 ```
+
+## RSA
+
+Here are some ways to run/look at this notebook:
+- [See an already-run version](https://brainiak.org/tutorials/06-rsa/)
+
