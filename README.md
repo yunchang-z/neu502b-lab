@@ -22,3 +22,8 @@ You'll also need to install `seaborn`, `matplotlib`, `jupyter`, and other packag
 ```
 pip install matplotlib seaborn jupyter notebook jupyterlab
 ```
+
+For the EEG demos, you'll need to install MNE:
+```
+pip install mne==0.17.1
+```
