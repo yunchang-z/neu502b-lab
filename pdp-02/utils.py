@@ -3,7 +3,11 @@ from matplotlib.colors import ListedColormap
 import numpy as np
 import torch
 
-def plot_decision_regions(predict, X, y, resolution=0.02, size=100, ax=None):
+def plot_decision_regions(
+    predict, X, y, resolution=0.02, size=100, ax=None,
+    # This parameter forces the decision region plot to be PNG due to issues with SVG display.
+    # This should be removed for notebooks that prefer only PNG display.
+    force_matplotlib_output_png_hack=True):
     """Plot decision boundaries.
 
     Parameters
@@ -19,6 +23,10 @@ def plot_decision_regions(predict, X, y, resolution=0.02, size=100, ax=None):
     ax : Matplotlib object.
         Canvas to plot onto.
     """
+    if force_matplotlib_output_png_hack:
+        from IPython.display import set_matplotlib_formats
+        set_matplotlib_formats('png')
+
     ## HACK Adapting sizes from CGC's code to work with this piece of SZ's code
     X = X.T
     ## HACK Force arrays to numpy
@@ -52,6 +60,11 @@ def plot_decision_regions(predict, X, y, resolution=0.02, size=100, ax=None):
         ax.scatter(x=X[y == cl, 0], y=X[y == cl, 1], s=size, alpha=0.9,
                     marker=markers[idx], color=colors[idx], label=cl)
 
+    if force_matplotlib_output_png_hack:
+        import matplotlib.pyplot as plt
+        plt.show()
+        set_matplotlib_formats('svg')
+
     return ax
 
 def animate_decision_regions(X, Y, predict_history, *, Xhistory=None, ax=None, filename=None, interval=50):
@@ -66,12 +79,14 @@ def animate_decision_regions(X, Y, predict_history, *, Xhistory=None, ax=None, f
     if Xhistory is None:
         Xhistory = [X] * len(predict_history)
 
-    plot_decision_regions(predict_history[0], Xhistory[0], Y, ax=ax)
+    kw = dict(force_matplotlib_output_png_hack=False)
+
+    plot_decision_regions(predict_history[0], Xhistory[0], Y, ax=ax, **kw)
 
     def update(t):
         for a in ax.lines + ax.collections:
             a.remove()
-        plot_decision_regions(predict_history[t], Xhistory[t], Y, ax=ax)
+        plot_decision_regions(predict_history[t], Xhistory[t], Y, ax=ax, **kw)
         return []
 
     a = animation.FuncAnimation(
