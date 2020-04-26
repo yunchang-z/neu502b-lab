@@ -5,6 +5,7 @@ import torch
 
 def plot_decision_regions(
     predict, X, y, resolution=0.02, size=100, ax=None,
+    title=None,
     # This parameter forces the decision region plot to be PNG due to issues with SVG display.
     # This should be removed for notebooks that prefer only PNG display.
     force_matplotlib_output_png_hack=True):
@@ -52,6 +53,8 @@ def plot_decision_regions(
     if ax is None:
         import matplotlib.pyplot as plt
         fig, ax = plt.subplots(1,1,figsize=(5,5))
+    if title is not None:
+        ax.set(title=title)
     ax.contourf(xx1, xx2, Z, alpha=0.4, cmap=cmap)
     ax.set(xlim=(xx1.min(), xx1.max()), ylim=(xx2.min(), xx2.max()))
 
