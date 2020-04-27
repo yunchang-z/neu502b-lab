@@ -27,3 +27,8 @@ For the EEG demos, you'll need to install MNE:
 ```
 pip install mne==0.17.1
 ```
+
+For PDP-02, you'll need to install PyTorch
+```
+pip install torch
+```
