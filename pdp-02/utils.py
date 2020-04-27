@@ -127,25 +127,25 @@ def torch_corrcoef(x):
     diag_cov_rsqrt = torch.diag(cov).rsqrt()
     return cov * diag_cov_rsqrt[:, None] * diag_cov_rsqrt[None, :]
 
-def fit(loss, parameters, *, lr=0.1, num_epochs=100, plot_loss=True, opt_fn=torch.optim.SGD, save_history_freq=1):
-    times, history, parameter_history = [], [], []
+def fit(loss, parameters, *, lr=0.1, num_epochs=100, plot_loss=True, opt_fn=torch.optim.SGD):
+    history, parameter_history = [], []
     parameters = list(parameters)
     opt = opt_fn(parameters, lr=lr)
 
     for t in range(num_epochs):
         J = loss()
+
         opt.zero_grad()
         J.backward()
         opt.step()
-        if (t+1) % save_history_freq == 0:
-            times.append(t)
-            history.append(J)
-            parameter_history.append([p.detach().clone() for p in parameters])
+
+        history.append(J)
+        parameter_history.append([p.detach().clone() for p in parameters])
 
     if plot_loss:
         import matplotlib.pyplot as plt
-        plt.plot(times, history)
+        plt.plot(history)
         plt.xlabel('# epochs')
         plt.ylabel('training loss')
 
-    return times, history, parameter_history
+    return history, parameter_history
