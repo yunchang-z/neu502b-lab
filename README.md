@@ -1,34 +1,79 @@
-# demos
+# NEU502b demo code
 
 Jupyter notebooks and materials for in-class demonstrations and exercises.
 
+## Setting up your computing environment
+
+We recommend setting up a dedicated computing environment for this class using [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment). You can set up this conda environment locally or on the PNI server (i.e. `scotty`). Open a terminal and run the following code on the command line. In the first step, we install [miniconda](https://docs.conda.io/en/latest/miniconda.html) in your home directory. If you alreadying have a working `conda` installation, you can skip this step.
+
+If you're on a Linux machine (e.g. the PNI server), use the following:
+
+```
+cd ~
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+If you're on a Mac, using the following instead:
+
+```
+cd ~
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-MacOSX-x86_64.sh
+```
+
+Next, we'll create a conda environment for the class and activate that environment.
+
+```
+conda create --name neu502b
+conda activate neu502b
+```
+
+Now we'll install some necessary packages (and their dependencies) into our conda environment.
+
+```
+conda install git jupyterlab matplotlib seaborn pytorch mne
+```
+
+Finally, we'll install our own `fmritools` package, which contains some helper functions for interacting with fMRI data.
+
+```
+pip install git+https://github.com/2021-NEU502b/fmritools.git
+```
+
 ## Cloning the repository
 
-To copy the repository, open a new terminal and run:
+If you don't already have a directory for this class, make one (`mkdir neu502b`) and navigate into it (`cd neu502b`). To clone this repository, run the following:
 
 ```
-git clone https://github.com/2020-NEU502b/demos.git
+git clone https://github.com/2021-NEU502b/demos.git
 ```
 
-## Setup
+## Running the notebooks
 
-To run the code in these demos, you'll have to install our fMRI package.
+You can either run the notebooks on your local computer, or on the PNI server. To run the notebooks locally, navigate your terminal to your `neu502b` directory and run `jupyter lab`.
+
+To run the notebooks on the server, we'll use port forwarding with an SSH tunnel to render the remote notebook in your local browser. First, log onto the server (e.g. `ssh username@scotty.pni.princeton.edu`). We recommend starting a persistent `tmux` session on the server (ou can learn more about `tmux` [here](https://brainhack-princeton.github.io/handbook/content_pages/hack_pages/tmux.html)):
 
 ```
-pip install git+https://github.com/2020-NEU502b/fmritools.git
-```
-
-You'll also need to install `seaborn`, `matplotlib`, `jupyter`, and other packages:
-```
-pip install matplotlib seaborn jupyter notebook jupyterlab
+tmux new -s neu502b
 ```
 
-For the EEG demos, you'll need to install MNE:
+Now, we'll start running Jupyter in the `tmux` session on the remote server (without a browser):
+
 ```
-pip install mne==0.17.1
+jupyter lab --no-browser
 ```
 
-For PDP-02, you'll need to install PyTorch
+Next, copy the full URL output by the `jupyter lab` command on the server (including the authentication token); e.g. `http://localhost:8888/?
+token=abcdefghijklmnopqrstuv0123456789abcdefghijklmnop`
+
+Now, open a local terminal and set up an SSH tunnel using the remote port (`8888` in the above example):
+
 ```
-pip install torch
+ssh -N -L 8888:localhost:8888 username@scotty.pni.princeton.edu
 ```
+
+Finally, open a browser (e.g. Chrome) and copy the full URL output by the `jupyter lab` command into the browser's URL bar. This should render the remote Jupyter session in your local browser, allowing you to efficiently interact with notebooks on the server.
+
+This workflow follows best practices described in the [Princeton Handbook for Reproducible Neuroimaging](https://brainhack-princeton.github.io/handbook/index.html), and more details as well as other useful tips can be found there.
