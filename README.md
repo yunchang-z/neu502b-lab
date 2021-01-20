@@ -32,7 +32,7 @@ conda activate neu502b
 Now we'll install some necessary packages (and their dependencies) into our conda environment.
 
 ```
-conda install git jupyterlab matplotlib seaborn pytorch mne
+conda install git jupyterlab ipywidgets matplotlib seaborn pytorch mne
 ```
 
 Finally, we'll install our own `fmritools` package, which contains some helper functions for interacting with fMRI data.
