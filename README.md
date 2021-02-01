@@ -16,7 +16,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-If you're on a Mac, using the following instead:
+If you're on a Mac, use the following instead:
 
 ```
 cd ~
