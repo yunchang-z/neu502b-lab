@@ -55,7 +55,7 @@ git clone https://github.com/2021-NEU502b/demos.git
 
 You can either run the notebooks on your local computer, or on the PNI server. To run the notebooks locally, navigate your terminal to your `neu502b` directory and run `jupyter lab`.
 
-To run the notebooks on the server, we'll use port forwarding with an SSH tunnel to render the remote notebook in your local browser. First, log onto the server (e.g. `ssh username@scotty.pni.princeton.edu`). We recommend starting a persistent `tmux` session on the server (ou can learn more about `tmux` [here](https://brainhack-princeton.github.io/handbook/content_pages/hack_pages/tmux.html)):
+To run the notebooks on the server, we'll use port forwarding with an SSH tunnel to render the remote notebook in your local browser. First, log onto the server (e.g. `ssh username@scotty.pni.princeton.edu`). We recommend starting a persistent `tmux` session on the server (you can learn more about `tmux` [here](https://brainhack-princeton.github.io/handbook/content_pages/hack_pages/tmux.html)):
 
 ```
 tmux new -s neu502b
