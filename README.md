@@ -83,7 +83,7 @@ To run the notebooks on the server, we'll use port forwarding with an SSH tunnel
 tmux new -s neu502b
 ```
 
-Now, we'll start running Jupyter in the `tmux` session on the remote server (without a browser):
+Remember, you'll need to (re)activate the conda environment again inside the tmux session. Now, we'll start running Jupyter in the `tmux` session on the remote server (without a browser):
 
 ```
 jupyter lab --no-browser
