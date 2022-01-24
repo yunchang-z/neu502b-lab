@@ -20,7 +20,7 @@ If you're on a Mac, use the following instead:
 
 ```
 cd ~
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o Miniconda3-latest-MacOSX-x86_64.sh
 bash Miniconda3-latest-MacOSX-x86_64.sh
 ```
 
