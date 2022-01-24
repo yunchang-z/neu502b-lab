@@ -34,7 +34,7 @@ conda activate neu502b
 Now we'll install some necessary packages (and their dependencies) into our conda environment.
 
 ```
-conda install git jupyterlab ipywidgets matplotlib seaborn 
+conda install git jupyterlab ipywidgets matplotlib seaborn conda-forge::gh
 ```
 
 Later in the course, we'll install some additional packages (but don't worry about this for now).
@@ -43,6 +43,20 @@ Later in the course, we'll install some additional packages (but don't worry abo
 conda install -c conda-forge mne
 conda install pytorch
 ```
+
+Create a GitHub account at https://github.com/ if you don't already have one. Next, in the terminal configure git with a username and email.
+```
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+```
+
+Begin authenticating with GitHub from git.
+```
+git auth login
+```
+
+Select `GitHub.com`, `HTTPS`,  `Yes` and `Paste an authentication token`. Then, navigate to https://github.com/settings/tokens in a browser. Click _Generate new token_ and enter a nickname of your computer in the _Note_ field (e.g. _macbook_, _scotty_). Set the expiration to _No expiration_. Click _repo_, _read:org_, and _user_; then, click _Generate token_. Copy the token and paste it into `Paste your authentication token` on the command line.
+
 
 Finally, we'll install our own `fmritools` package, which contains some helper functions for interacting with fMRI data.
 
@@ -55,7 +69,8 @@ pip install git+https://github.com/2022-NEU502b/fmritools.git
 If you don't already have a directory for this class, make one (`mkdir neu502b`) and navigate into it (`cd neu502b`). To clone this repository, run the following:
 
 ```
-git clone https://github.com/2021-NEU502b/demos.git
+git clone https://github.com/2022-NEU502b/demos.git
+cd demos
 ```
 
 ## Running the notebooks
