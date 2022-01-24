@@ -37,7 +37,7 @@ Now we'll install some necessary packages (and their dependencies) into our cond
 conda install git jupyterlab ipywidgets matplotlib seaborn 
 ```
 
-Later in the course, we'll install some additional packages (but they may take awhile):
+Later in the course, we'll install some additional packages (but they may take awhile).
 
 ```
 conda install -c conda-forge mne
