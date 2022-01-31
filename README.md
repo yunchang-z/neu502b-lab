@@ -52,7 +52,7 @@ git config --global user.email "email@example.com"
 
 Begin authenticating with GitHub from git.
 ```
-git auth login
+gh auth login
 ```
 
 Select `GitHub.com`, `HTTPS`,  `Yes` and `Paste an authentication token`. Then, navigate to https://github.com/settings/tokens in a browser. Click _Generate new token_ and enter a nickname of your computer in the _Note_ field (e.g. _macbook_, _scotty_). Set the expiration to _No expiration_. Click _repo_, _read:org_, and _user_; then, click _Generate token_. Copy the token and paste it into `Paste your authentication token` on the command line.
