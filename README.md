@@ -40,7 +40,7 @@ conda install git jupyterlab ipywidgets matplotlib seaborn conda-forge::gh
 Later in the course, we'll install some additional packages (but don't worry about this for now).
 
 ```
-conda install -c conda-forge mne
+conda install -c conda-forge mne-base
 conda install pytorch
 ```
 
