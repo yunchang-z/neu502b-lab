@@ -40,8 +40,7 @@ conda install jupyterlab scipy git matplotlib seaborn
 Later in the course, we'll install some additional packages (but don't worry about this for now); for example:
 
 ```
-pip install nibabel
-conda install nilearn
+pip install nilearn
 conda install -c conda-forge mne-base
 conda install pytorch
 ```
