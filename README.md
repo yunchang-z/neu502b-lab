@@ -34,7 +34,7 @@ conda activate neu502b
 Now we'll install some necessary packages (and their dependencies) into our conda environment.
 
 ```
-conda install jupyterlab scipy git matplotlib seaborn
+conda install jupyterlab scipy git gh matplotlib seaborn
 ```
 
 Later in the course, we'll install some additional packages (but don't worry about this for now); for example:
